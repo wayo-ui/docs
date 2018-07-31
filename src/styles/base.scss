@@ -1,0 +1,32 @@
+@import './markdown.scss';
+@import '~prismjs/themes/prism.css';
+html,body{
+  height: 100%;
+  overflow: hidden;
+}
+body{
+  margin: 0;
+  color: $color-font-primary;
+  background-color: #fcfcfc;
+}
+ul,ol,p{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a,a:hover,a:focus,a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+.window{
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 60px 0 0 230px;
+  .main{
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+}
+
