@@ -52,6 +52,7 @@ export default {
         return;
       }
       this.$router.push({path});
+      this.$store.dispatch('toggleSidebar',false);
     }
   }
 };

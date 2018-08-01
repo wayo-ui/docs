@@ -14,3 +14,23 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+@import '~@/styles/common.scss';
+.color-item{
+  display: inline-block;
+  width: 150px;
+  height: 60px;
+  color: #fff;
+  position: relative;
+  @include border-radius(4px);
+  &__content{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+  }
+}
+</style>

@@ -1,6 +1,8 @@
 <template>
-<div class="sidebar">
+<div class="sidebar"
+  :style="`${show?'left:0;':''}`">
   <sidebar-list :list="menulist"></sidebar-list>
+  <div class="sidebar__action" @click="toggleSidebar"></div>
 </div>
 </template>
 
@@ -13,6 +15,19 @@ export default {
     return {
       menulist: [...SideBarList]
     };
+  },
+  computed: {
+    show(){
+      return this.$store.getters.ShowSideBar||false;
+    }
+  },
+  methods: {
+    toggleSidebar(){
+      this.$store.dispatch('toggleSidebar');
+    },
+    closeSidebar(){
+      this.$store.dispatch('toggleSidebar',false);
+    }
   },
   components: {
     SidebarList
@@ -33,5 +48,28 @@ export default {
   width: 230px;
   font-size: 14px;
   overflow: auto;
+  transition: all 0.2s ease-in-out;
+  background-color: #fcfcfc;
+  @media screen and (max-width: $screen-width-tablet){
+    left: -100%;
+    z-index: 11;
+    .sidebar__action{
+      display: block;
+    }
+  }
+  &__action{
+    display: none;
+    background: url('../../assets/menu.png') no-repeat;
+    background-size: 100% 100%;
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    background-color: #fff;
+    border: solid 1px #5f5f5f;
+    @include border-radius(3px);
+  }
 }
 </style>

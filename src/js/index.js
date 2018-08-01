@@ -3,6 +3,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router'
 import Wayo from 'wayo';
 import App from './App.vue';
+import Store from './store';
 
 Vue.use(Wayo);
 Vue.use(VueRouter);
@@ -29,6 +30,7 @@ new Vue({
   el: '#app',
   template: `<app></app>`,
   router: Router,
+  store: Store,
   components: {
     App
   }

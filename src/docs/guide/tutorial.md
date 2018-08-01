@@ -19,7 +19,7 @@ import './node_modules/wayo/dist/wayo.min.css';
 
 推荐在项目style文件中引入，比如在项目`style.scss`中添加如下代码：
 ```scss
-@import './node_modules/wayo/dist/wayo.min.css';
+@import '~wayo/dist/wayo.min.css';
 ```
 
 ### CDN

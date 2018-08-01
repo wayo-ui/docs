@@ -1,6 +1,7 @@
 ## Button 按钮
 
 ### 类型
+Button类型分为无语义类型（默认）和语义类型（即有状态的类型）。
 
 ```html
 <!-- default -->
@@ -18,6 +19,7 @@
 ```
 
 ### 尺寸
+内置的尺寸除`fit`以外均为行内块元素（即`display:inline-block;`），`fit`按钮占满容器宽度。
 
 ```html
 <!-- default -->
@@ -65,6 +67,7 @@
 ```
 
 ### 圆形按钮
+圆形按钮只能含图标不能含文案，否则无效。
 
 ```html
 <wayo-button type="primary" circle icon="bus"></wayo-button>
@@ -109,6 +112,7 @@
 ```
 
 ### 自定义颜色和尺寸
+可自定义按钮的背景色、描边颜色、字体颜色、尺寸以及字号大小。
 
 ```html
 <wayo-button 
@@ -120,3 +124,21 @@
   :height="40" 
   :font-size="14">默认</wayo-button>
 ```
+
+### 属性
+|参数|说明|类型|可选值|默认值|
+|:--|:--|:--|:--|:--|
+|type|类型|string|default/primary/info/warning/danger|default|
+|size|内置尺寸|string|mini/small/medium/default/large/fit|default|
+|disabled|禁用状态|boolean|-|false|
+|loading|加载状态|boolean|-|false|
+|outline|描边按钮|boolean|-|false|
+|round|圆边按钮|boolean|-|false|
+|circle|圆形按钮|boolean|-|false|
+|icon|图标名称|string|Wayo内置icon|-|
+|bg-color|背景颜色|string|-|-|
+|font-color|字体颜色|string|-|-|
+|border-color|描边颜色|string|-|-|
+|width|宽度|string|-|-|
+|height|高度|string|-|-|
+|font-size|字号|string|-|-|

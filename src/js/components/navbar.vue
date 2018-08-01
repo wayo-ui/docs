@@ -45,6 +45,10 @@ export default {
   left: 20px;
   top: 50%;
   @include transform(translateY(-50%));
+  @media screen and (max-width: $screen-width-tablet){
+    left: 50%;
+    @include transform(translate(-50%,-50%));
+  }
 }
 .navbar-logo__img{
   width: 40px;
@@ -63,10 +67,15 @@ export default {
   right: 20px;
   top: 50%;
   @include transform(translateY(-50%));
+  @media screen and (max-width: $screen-width-tablet){
+    display: none;
+  }
 }
+
 .navbar-menu__list{
   font-size: 1px;
   line-height: 1;
+
 }
 .navbar-menu__item{
   cursor: pointer;

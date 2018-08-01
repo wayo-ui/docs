@@ -12,17 +12,17 @@ export const SideBarList = [{
     label: '快速上手',
     activated: true,
     route: '/guide/tutorial'
-  }]
-},{
-  label: '开发规范',
-  sublist: [{
-    label: '色彩',
-    activated: true,
-    route: '/standard/colors'
   },{
-    label: '字体',
-    activated: true,
-    route: '/standard/fonts'
+    label: '开发规范',
+    sublist: [{
+      label: '色彩',
+      activated: true,
+      route: '/guide/colors'
+    },{
+      label: '字体',
+      activated: true,
+      route: '/guide/fonts'
+    }]
   }]
 },{
   label: '组件',

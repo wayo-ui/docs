@@ -23,8 +23,11 @@ a,a:hover,a:focus,a:visited{
   height: 100%;
   box-sizing: border-box;
   padding: 60px 0 0 230px;
+  @media screen and (max-width: $screen-width-tablet){
+    padding-left: 0;
+  }
   .main{
-    padding: 10px;
+    padding: 10px 10px 50px 10px;
     box-sizing: border-box;
     height: 100%;
   }
