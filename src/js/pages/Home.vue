@@ -1,7 +1,7 @@
 <template>
 <div class="main main-home">
   <div class="home-showcase">
-    <img src="../assets/logo.png" class="home-showcase__img">
+    <img src="../../assets/logo.png" class="home-showcase__img">
   </div>
   <div class="home-info">
     <p class="home-info__title">Wayo</p>

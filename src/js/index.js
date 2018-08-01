@@ -11,15 +11,17 @@ const Router = new VueRouter({
   routes: [{
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "home" */ './Home.vue')
+    component: () => import(/* webpackChunkName: "home" */ './pages/Home.vue')
   },{
-    path: '/guide/:page',
+    path: '/guide/:name',
     name: 'guide',
-    component: () => import(/* webpackChunkName: "guide" */ './Guide.vue')
+    props: true,
+    component: () => import(/* webpackChunkName: "guide" */ './pages/Guide.vue')
   },{
     path: '/components/:name',
     name: 'components',
-    component: () => import(/* webpackChunkName: "components" */ './Components.vue')
+    props: true,
+    component: () => import(/* webpackChunkName: "components" */ './pages/Components.vue')
   }]
 });
 
