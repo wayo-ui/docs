@@ -5,7 +5,7 @@ const Config = require('./config');
 module.exports = {
   mode: 'production',
   entry: {
-    dll: ['wayo','vue']
+    dll: ['wayo','vue','vuex','vue-router']
   },
   output: {
     path: Config.DllDir,
@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: [
     new Webpack.DllPlugin({
+      context: process.cwd(),
       path: `${Config.DllDir}/manifest.json`,
       name: '[name]'
     })

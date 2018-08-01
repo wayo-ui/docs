@@ -2,6 +2,11 @@
 <div class="components-demo">
   <div class="components-demo__content">
     <demo-button v-if="name==='button'"></demo-button>
+    <demo-icon v-if="name==='icon'"></demo-icon>
+    <demo-separator v-if="name==='separator'"></demo-separator>
+    <demo-stripe v-if="name==='stripe'"></demo-stripe>
+    <demo-rate v-if="name==='rate'"></demo-rate>
+    <demo-flex v-if="name==='flex'"></demo-flex>
   </div>
 </div>
 </template>
@@ -16,7 +21,12 @@ export default {
     }
   },
   components: {
-    DemoButton: () => import(/* webpackChunkName: "demo-button" */ './demos/button.vue')
+    DemoButton: () => import(/* webpackChunkName: "demo-button" */ './demos/button.vue'),
+    DemoIcon: () => import(/* webpackChunkName: "demo-icon" */ './demos/icon.vue'),
+    DemoSeparator: () => import(/* webpackChunkName: "demo-separator" */ './demos/separator.vue'),
+    DemoStripe: () => import(/* webpackChunkName: "demo-stripe" */ './demos/stripe.vue'),
+    DemoRate: () => import(/* webpackChunkName: "demo-rate" */ './demos/rate.vue'),
+    DemoFlex: () => import(/* webpackChunkName: "demo-flex" */ './demos/flex.vue')
   }
 };
 </script>

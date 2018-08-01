@@ -44,8 +44,23 @@ module.exports = Merge(BasicWebpackConfig,{
       }
     }]
   },
+  externals: {
+    vue: {
+      commonjs: 'vue'
+    },
+    'vue-router': {
+      commonjs: 'vue-router'
+    },
+    vuex: {
+      commonjs: 'vuex'
+    },
+    wayo: {
+      commonjs: 'wayo'
+    }
+  },
   plugins: [
     new Webpack.DllReferencePlugin({
+      context: process.cwd(),
       manifest: `${Config.DllDir}/manifest.json`
     }),
     new CleanWebpackPlugin(Config.DistDir,{
