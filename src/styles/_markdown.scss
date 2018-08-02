@@ -1,4 +1,7 @@
 .markdown-content{
+  .table-box{
+    overflow: auto;
+  }
   h1 tt,
   h1 code {
     font-size: inherit;
@@ -170,6 +173,7 @@
   table {
     padding: 0;
     border-collapse: collapse;
+    white-space: nowrap;
   }
 
   table tr {

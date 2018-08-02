@@ -185,6 +185,8 @@ Flex-box的`gutter`属性可以指定子元素之间的精准间距，单位为`
 ```
 
 ### Flex-box 属性
+<div class="table-box">
+
 |参数|说明|类型|可选值|默认值|
 |:--|:--|:--|:--|:--|
 |direction|方向|string|row/column/row-reverse/column-reverse|row|
@@ -194,9 +196,14 @@ Flex-box的`gutter`属性可以指定子元素之间的精准间距，单位为`
 |wrap|是否自动换行|boolean|-|false|
 |gutter|子元素间距|number|-|0|
 
+</div>
 
 ### Flex-cell 属性
+<div class="table-box">
+
 |参数|说明|类型|可选值|默认值|
 |:--|:--|:--|:--|:--|
 |span|占据的单元格个数|number|-|-|
 |offset|与前一个元素的间隔单元格个数|number|-|0|
+
+</div>

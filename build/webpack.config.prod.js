@@ -11,9 +11,6 @@ const BasicWebpackConfig = require('./webpack.config.base.js');
 module.exports = Merge.smart(BasicWebpackConfig, {
   devtool: false,
   mode: 'production',
-  output: {
-    publicPath: './'
-  },
   module: {
     rules: [{
       test: /\.scss$/,

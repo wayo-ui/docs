@@ -1,6 +1,6 @@
 <template>
 <section class="demo-box">
-  <p class="title">基本使用</p>
+  <p class="title">基础用法</p>
   <wayo-stripe>
     <wayo-stripe-button icon="cny">25</wayo-stripe-button>
     <wayo-stripe-button type="fill">预定</wayo-stripe-button>

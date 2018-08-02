@@ -59,6 +59,8 @@
 ```
 
 ### Stripe 属性
+<div class="table-box">
+
 |参数|说明|类型|可选值|默认值|
 |:--|:--|:--|:--|:--|
 |size|尺寸|string|small/default/large|default|
@@ -68,8 +70,14 @@
 |height|高度|number|-|-|
 |disabled|禁用状态|boolean|-|false|
 
+</div>
+
 ### Stripe-button 属性
+<div class="table-box">
+
 |参数|说明|类型|可选值|默认值|
 |:--|:--|:--|:--|:--|
 |type|类型|string|fill/stroke|stroke|
 |icon|图标|string|Wayo内置图标|-|
+
+</div>

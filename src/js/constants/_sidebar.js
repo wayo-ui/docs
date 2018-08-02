@@ -29,13 +29,25 @@ export const SideBarList = [{
   sublist: [{
     label: '基础组件',
     sublist: [{
-      label: 'Icon 图标',
+      label: 'Block 区域',
       activated: true,
-      route: '/components/icon'
+      route: '/components/block'
     },{
       label: 'Separator 1像素分割线',
       activated: true,
       route: '/components/separator'
+    },{
+      label: 'Lath 横幅',
+      activated: true,
+      route: '/components/lath'
+    },{
+      label: 'Flex 弹性布局',
+      activated: true,
+      route: '/components/flex'
+    },{
+      label: 'Icon 图标',
+      activated: true,
+      route: '/components/icon'
     },{
       label: 'Button 按钮',
       activated: true,
@@ -45,56 +57,44 @@ export const SideBarList = [{
       activated: true,
       route: '/components/stripe'
     },{
-      label: 'Rate 评分',
-      activated: true,
-      route: '/components/rate'
-    },{
-      label: 'Flex 弹性布局',
-      activated: true,
-      route: '/components/flex'
-    },{
-      label: 'Card 卡片',
-      activated: true,
-      route: '/components/card'
-    },{
-      label: 'Lath 横幅',
-      activated: true,
-      route: '/components/lath'
-    },{
-      label: 'Tabs 标签页',
-      activated: true,
-      route: '/components/tabs'
-    },{
-      label: 'Slides 走马灯',
-      activated: true,
-      route: '/components/slides'
-    }]
-  },{
-    label: '业务组件',
-    sublist: [{
       label: 'Tag 标签',
       activated: true,
       route: '/components/tag'
     },{
       label: 'Image 图片',
       activated: true,
-      route: '/components/flex'
+      route: '/components/image'
     },{
-      label: 'ImageViewer 图片浏览',
+      label: 'Rate 评分',
       activated: true,
-      route: '/components/imageviewer'
+      route: '/components/rate'
     },{
-      label: 'Showcase 橱窗',
+      label: 'Tabs 标签页',
+      activated: true,
+      route: '/components/tabs'
+    },{
+      label: 'Slides 幻灯片',
+      activated: true,
+      route: '/components/slides'
+    }]
+  },{
+    label: '业务组件',
+    sublist: [{
+      label: 'Showcase 展柜',
       activated: true,
       route: '/components/showcase'
     },{
       label: 'Toast 轻提示',
       activated: true,
       route: '/components/toast'
+    },{
+      label: 'ImageViewer 图片浏览',
+      activated: true,
+      route: '/components/imageviewer'
     }]
   }]
-},{
-  label: '更新日志',
-  activated: true,
-  route: '/changelog'
+// },{
+//   label: '更新日志',
+//   activated: true,
+//   route: '/changelog'
 },];

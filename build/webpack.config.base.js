@@ -11,7 +11,8 @@ module.exports = {
   output: {
     path: Config.DistDir,
     filename: 'js/[name].[hash:8].js',
-    chunkFilename: 'js/modules/[name].[hash:8].js'
+    chunkFilename: 'js/modules/[name].[hash:8].js',
+    publicPath: process.env.NODE_ENV === 'production'?'./':'/'
   },
   target: 'web',
   module: {
@@ -33,7 +34,8 @@ module.exports = {
       test: /fonts\/\w+\.(svg|ttf|woff)(\?.*)?$/,
       loader: 'file-loader',
       options: {
-        name: 'assets/fonts/[name].[ext]'
+        name: 'assets/fonts/[name].[ext]',
+        publicPath: process.env.NODE_ENV === 'production'?'../':'/'
       }
     }, {
       test: /\.ejs$/,

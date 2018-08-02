@@ -1,5 +1,5 @@
 <template>
-<div class="components-demo">
+<div class="components-demo" v-show="show">
   <div class="components-demo__content">
     <demo-button v-if="name==='button'"></demo-button>
     <demo-icon v-if="name==='icon'"></demo-icon>
@@ -7,6 +7,15 @@
     <demo-stripe v-if="name==='stripe'"></demo-stripe>
     <demo-rate v-if="name==='rate'"></demo-rate>
     <demo-flex v-if="name==='flex'"></demo-flex>
+    <demo-block v-if="name==='block'"></demo-block>
+    <demo-lath v-if="name==='lath'"></demo-lath>
+    <demo-tabs v-if="name==='tabs'"></demo-tabs>
+    <demo-slides v-if="name==='slides'"></demo-slides>
+    <demo-tag v-if="name==='tag'"></demo-tag>
+    <demo-image v-if="name==='image'"></demo-image>
+    <!--<demo-imageviewer v-if="name==='imageviewer'"></demo-imageviewer>-->
+    <demo-showcase v-if="name==='showcase'"></demo-showcase>
+    <demo-toast v-if="name==='toast'"></demo-toast>
   </div>
 </div>
 </template>
@@ -20,13 +29,27 @@ export default {
       default: ''
     }
   },
+  computed: {
+    show(){
+      return this.name !== 'imageviewer';
+    }
+  },
   components: {
     DemoButton: () => import(/* webpackChunkName: "demo-button" */ './demos/button.vue'),
     DemoIcon: () => import(/* webpackChunkName: "demo-icon" */ './demos/icon.vue'),
     DemoSeparator: () => import(/* webpackChunkName: "demo-separator" */ './demos/separator.vue'),
     DemoStripe: () => import(/* webpackChunkName: "demo-stripe" */ './demos/stripe.vue'),
     DemoRate: () => import(/* webpackChunkName: "demo-rate" */ './demos/rate.vue'),
-    DemoFlex: () => import(/* webpackChunkName: "demo-flex" */ './demos/flex.vue')
+    DemoFlex: () => import(/* webpackChunkName: "demo-flex" */ './demos/flex.vue'),
+    DemoBlock: () => import(/* webpackChunkName: "demo-block" */ './demos/block.vue'),
+    DemoLath: () => import(/* webpackChunkName: "demo-lath" */ './demos/lath.vue'),
+    DemoTabs: () => import(/* webpackChunkName: "demo-tabs" */ './demos/tabs.vue'),
+    DemoSlides: () => import(/* webpackChunkName: "demo-slides" */ './demos/slides.vue'),
+    DemoTag: () => import(/* webpackChunkName: "demo-tag" */ './demos/tag.vue'),
+    DemoImage: () => import(/* webpackChunkName: "demo-image" */ './demos/image.vue'),
+    // DemoImageviewer: () => import(/* webpackChunkName: "demo-imageviewer" */ './demos/imageviewer.vue'),
+    DemoShowcase: () => import(/* webpackChunkName: "demo-showcase" */ './demos/showcase.vue'),
+    DemoToast: () => import(/* webpackChunkName: "demo-toast" */ './demos/toast.vue')
   }
 };
 </script>

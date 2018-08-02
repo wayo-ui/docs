@@ -33,6 +33,8 @@
 ```
 
 ### 属性
+<div class="table-box">
+
 |参数|说明|类型|可选值|默认值|
 |:--|:--|:--|:--|:--|
 |max|最大值，即星星个数|number|-|5|
@@ -43,3 +45,5 @@
 |show-score|是否显示分值|boolean|-|false|
 |chosen-color|点亮星星的颜色|string|-|#ed5026|
 |unchosen-color|未点亮星星的颜色|string|-|#d6d6d6|
+
+</div>

@@ -6,9 +6,15 @@
   </div>
   <div class="navbar-menu">
     <ul class="navbar-menu__list">
-      <li class="navbar-menu__item">首页</li>
-      <li class="navbar-menu__item">bug反馈</li>
-      <li class="navbar-menu__item">Github</li>
+      <li class="navbar-menu__item">
+        <a target="_blank" href="https://wayo-ui.github.io/">首页</a>
+      </li>
+      <li class="navbar-menu__item">
+        <a target="_blank" href="https://github.com/wayo-ui/wayo/issues">bug反馈</a>
+      </li>
+      <li class="navbar-menu__item">
+        <a target="_blank" href="https://github.com/wayo-ui/wayo">Github</a>
+      </li>
     </ul>
   </div>
 </div>

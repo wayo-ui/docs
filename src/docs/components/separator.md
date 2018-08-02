@@ -7,9 +7,13 @@ separator是一条在任何设备上视觉效果均为1px的直线，可选水�
 ```
 
 ### 属性
+<div class="table-box">
+
 |参数|说明|类型|可选值|默认值|
 |:--|:--|:--|:--|:--|
 |direction|方向|string|row/column|row|
 |height|高度，仅在direction=column时有效|number|-|-|
 |color|颜色|string|-|#cccccc|
 |absolute|绝对定位|boolean|-|false|
+
+</div>
