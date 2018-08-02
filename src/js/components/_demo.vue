@@ -1,7 +1,7 @@
 <template>
 <div class="components-demo" v-show="show">
   <div class="components-demo__content">
-    <demo-button v-if="name==='button'"></demo-button>
+    <demo-button v-if="!name||name==='button'"></demo-button>
     <demo-icon v-if="name==='icon'"></demo-icon>
     <demo-separator v-if="name==='separator'"></demo-separator>
     <demo-stripe v-if="name==='stripe'"></demo-stripe>

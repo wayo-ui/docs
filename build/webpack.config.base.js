@@ -6,7 +6,8 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: {
-    docs: `${Config.SourceDir}/js/index.js`
+    docs: `${Config.SourceDir}/js/index.js`,
+    demo: `${Config.SourceDir}/js/demo.js`
   },
   output: {
     path: Config.DistDir,
@@ -56,7 +57,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: `${Config.SourceDir}/index.ejs`,
       filename: 'index.html',
-      inject: true
+      inject: true,
+      chunks: ['docs']
+    }),
+    new HtmlWebpackPlugin({
+      template: `${Config.SourceDir}/demo.ejs`,
+      filename: 'demo.html',
+      inject: true,
+      chunks: ['demo']
     })
   ],
   resolve: {

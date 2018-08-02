@@ -57,7 +57,7 @@ module.exports = Merge.smart(BasicWebpackConfig, {
       root: Config.RootDir
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles/docs.[hash:8].css',
+      filename: 'styles/[name].[hash:8].css',
       chunkFilename: 'styles/modules/[name].[hash:8].css'
     }),
     new Webpack.DefinePlugin({

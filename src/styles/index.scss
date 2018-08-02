@@ -1,4 +1,22 @@
 @import '~wayo/dist/wayo.min.css';
+@import '~prismjs/themes/prism.css';
+@import './markdown.scss';
 @import './common.scss';
 @import './base.scss';
+
+.window{
+  overflow: auto;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 60px 0 0 230px;
+  @media screen and (max-width: $screen-width-tablet){
+    padding-left: 0;
+  }
+  .main{
+    padding: 10px 10px 50px 10px;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+  }
+}
 

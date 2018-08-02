@@ -17,6 +17,7 @@
       </li>
     </ul>
   </div>
+  <a href="./demo.html" class="nabvar-demo-link">查看Demo</a>
 </div>
 </template>
 
@@ -76,7 +77,6 @@ export default {};
 .navbar-menu__list{
   font-size: 1px;
   line-height: 1;
-
 }
 .navbar-menu__item{
   cursor: pointer;
@@ -86,6 +86,19 @@ export default {};
   margin: 0 5px;
   &:hover{
     color: $color-primary;
+  }
+}
+.nabvar-demo-link{
+  display: none;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  @include transform(translateY(-50%));
+  @media screen and (max-width: $screen-width-tablet){
+    display: block;
   }
 }
 </style>
