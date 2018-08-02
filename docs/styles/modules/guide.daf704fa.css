@@ -1,0 +1,24 @@
+/* primary */
+/* status */
+/* font */
+.color-item {
+  display: inline-block;
+  width: 150px;
+  height: 60px;
+  color: #fff;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+.color-item__content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+}
+

@@ -57,6 +57,12 @@ module.exports = Merge(BasicWebpackConfig, {
       }
     }]
   },
+  resolve: {
+    extensions: ['.js', '.vue'],
+    alias: {
+      'vue': 'vue/dist/vue.esm.js'
+    }
+  },
   plugins: [
     new Webpack.DefinePlugin({
       'process.env': {

@@ -1,19 +1,17 @@
 const Path = require('path');
-const Marked = require("marked");
 const Config = require('./config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-const Renderer = new Marked.Renderer();
 
 module.exports = {
   entry: {
-    doc: `${Config.SourceDir}/js/index.js`
+    docs: `${Config.SourceDir}/js/index.js`
   },
   output: {
     path: Config.DistDir,
     filename: 'js/[name].[hash:8].js',
-    publicPath: '/'
+    chunkFilename: 'js/modules/[name].[hash:8].js'
   },
   target: 'web',
   module: {
@@ -22,6 +20,7 @@ module.exports = {
       loader: 'raw-loader'
     }, {
       test: /\.js$/,
+      include: [Config.SourceDir],
       exclude: /node_modules/,
       loader: 'babel-loader'
     }, {
@@ -61,8 +60,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      '@': Config.SourceDir,
-      'vue': 'vue/dist/vue.esm.js'
+      '@': Config.SourceDir
     }
   }
 };

@@ -1,0 +1,24 @@
+
+.box[data-v-e437da54] {
+  margin-bottom: 15px;
+}
+.cell[data-v-e437da54] {
+  text-align: center;
+  height: 30px;
+  line-height: 28px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  font-size: 12px;
+}
+.cell[data-v-e437da54]:nth-child(odd) {
+    color: #333;
+    background-color: #ccc;
+}
+.cell[data-v-e437da54]:nth-child(even) {
+    color: #333;
+    background-color: #999;
+}
+.cell-column[data-v-e437da54] {
+    width: 33.33%;
+}
+

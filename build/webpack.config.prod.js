@@ -2,27 +2,28 @@ const Path = require('path');
 const Webpack = require('webpack');
 const Merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Config = require('./config');
 const BasicWebpackConfig = require('./webpack.config.base.js');
 
-module.exports = Merge(BasicWebpackConfig,{
+module.exports = Merge.smart(BasicWebpackConfig, {
   devtool: false,
   mode: 'production',
+  output: {
+    publicPath: './'
+  },
   module: {
     rules: [{
       test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [{
-          loader: 'css-loader',
-          options: {
-            minimize: true
-          }
-        },'sass-loader']
-      })
+      use: [MiniCssExtractPlugin.loader, {
+        loader: 'css-loader',
+        options: {
+          minimize: true
+        }
+      }, 
+      'sass-loader']
     }, {
       test: /\.vue$/,
       loader: 'vue-loader',
@@ -44,37 +45,32 @@ module.exports = Merge(BasicWebpackConfig,{
       }
     }]
   },
-  externals: {
-    vue: {
-      commonjs: 'vue'
-    },
-    'vue-router': {
-      commonjs: 'vue-router'
-    },
-    vuex: {
-      commonjs: 'vuex'
-    },
-    wayo: {
-      commonjs: 'wayo'
+  resolve: {
+    extensions: ['.js', '.vue'],
+    alias: {
+      'vue': 'vue/dist/vue.esm.js'
     }
   },
   plugins: [
     new Webpack.DllReferencePlugin({
       context: process.cwd(),
-      manifest: `${Config.DllDir}/manifest.json`
+      manifest: require(`${Config.DllDir}/manifest.json`)
     }),
-    new CleanWebpackPlugin(Config.DistDir,{
+    new CleanWebpackPlugin(Config.DistDir, {
       root: Config.RootDir
     }),
-    new ExtractTextPlugin("styles/doc.min.css"),
+    new MiniCssExtractPlugin({
+      filename: 'styles/docs.[hash:8].css',
+      chunkFilename: 'styles/modules/[name].[hash:8].css'
+    }),
     new Webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: "'production'"
       }
     }),
     new CopyWebpackPlugin([{
-      from: `${Config.DllDir}/dll.js`,
-      to: `${Config.DistDir}/js/dll.js`,
+      from: `${Config.DllDir}/docs.dll.js`,
+      to: `${Config.DistDir}/js/docs.dll.js`,
       ignore: ['.*']
     }]),
     new UglifyJsPlugin({
@@ -83,10 +79,11 @@ module.exports = Merge(BasicWebpackConfig,{
           warnings: false
         }
       },
-      sourceMap: false,
-      parallel: true
+      sourceMap: false
     }),
     new Webpack.HashedModuleIdsPlugin(),
-    new Webpack.optimize.ModuleConcatenationPlugin()
+    new Webpack.optimize.ModuleConcatenationPlugin(),
+    new Webpack.NamedModulesPlugin(),
+    new Webpack.NoEmitOnErrorsPlugin()
   ]
 });
